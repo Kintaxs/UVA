@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cstdlib>
+#define keynum 36
+using namespace std;
+
+int main()
+{
+	int i;
+	char str[64];
+	char keyboard[]={'q','w','e','r','t','y','u','i','o','p','[',
+				   ']','a','s','d','f','g','h','j','k','l',';',
+				   '\'','z','x','c','v','b','n','m',',','.','/'};
+	
+	while(cin.getline(str,64))
+	{
+	
+		i=0;
+	
+		while(str[i]!='\0')
+		{
+			if(str[i]==' ')
+				cout<<" ";
+			for(int j=0;j<keynum;j++)
+			{
+				if((char)tolower(str[i])==keyboard[j])
+					cout<<keyboard[j-2];
+			}
+			i++;
+		}
+		cout<<endl;
+	}
+}
