@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstdlib>
+#define STR_NUM 64
+
+using namespace std;
+
+int main()
+{
+	int arr[26]={0};
+	int len=0;
+	int line;
+	char str[STR_NUM];
+	
+	
+	cin>>line;
+	cin.getline(str,STR_NUM);
+	
+	while(line--)
+	{
+		cin.getline(str,STR_NUM);
+		
+		for(int i=0;i<STR_NUM;i++)
+		{
+			if(str[i]=='\0')
+				break;
+			if(str[i]>=97&&str[i]<=122)
+				str[i]-=32;
+			if(str[i]>=65&&str[i]<=90)
+			{
+				arr[str[i]-65]++;
+				len++;
+			}
+		}
+
+	}
+	
+	while(len)
+		{
+			for(int i=0;i<26;i++)
+			{
+				if(arr[i]==len)
+					cout<<(char)(i+65)<<" "<<arr[i]<<endl;
+			}
+			len--;
+		}
+}
