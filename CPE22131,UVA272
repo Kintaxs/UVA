@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	char c;
+	bool flag=false;
+	
+	while(cin.get(c))
+	{
+		if(c=='"')
+		{
+			if(flag==false)
+			{
+				flag=true;
+				cout<<"``";
+			}
+			else
+			{
+				flag=false;
+				cout<<"''";
+			}
+		}
+		else
+			cout<<c;
+	}
+
+}
