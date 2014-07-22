@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstdlib>
+#include<set>
+using namespace std;
+
+int main()
+{
+	int n,d,a,b;
+	
+		
+	while(cin>>n)
+	{
+		set<int> diff;
+		
+		cin>>a;
+		
+		for(int i=1;i<n;i++)
+		{
+			cin>>b;
+			
+			
+			if(a>b)
+				d=a-b;
+			else
+				d=b-a;
+	
+			
+			if(d&&d<n)
+			{
+				
+				diff.insert(d);
+			}
+			
+			a=b;
+		}
+	
+		if(diff.size()==n-1)
+			cout<<"Jolly"<<endl;
+		else
+			cout<<"Not jolly"<<endl;
+		
+	}
+	
+	
+
+}
