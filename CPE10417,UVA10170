@@ -1,0 +1,24 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+int main()
+{
+	long long int s,d,sum;
+
+	while(cin>>s)
+	{
+		sum=0;
+		cin>>d;
+		
+		for(int i=s;;i++)
+		{
+			sum+=i;
+			if(sum>=d)
+			{
+				cout<<i<<endl;
+				break;
+			}
+		}
+	}
+}
