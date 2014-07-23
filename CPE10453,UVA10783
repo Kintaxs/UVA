@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line,a,b,sum,initial;
+	
+	cin>>line;
+	initial=line;
+	
+	while(line--)
+	{
+		sum=0;
+		cin>>a>>b;
+		
+		for(int i=a;i<=b;i++)
+		{
+			if(i%2==1)
+				sum+=i;
+		}
+		
+		cout<<"Case "<<(initial-line)<<": "<<sum<<endl;
+	}
+
+
+}
