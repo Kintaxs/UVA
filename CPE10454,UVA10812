@@ -1,0 +1,25 @@
+#include<iostream>
+#include<cstdlib>
+
+using namespace std;
+
+int main()
+{
+	int line,sum,diff,a,b;
+	cin>>line;
+	
+	while(line--)
+	{
+		cin>>sum>>diff;
+		
+		a=(sum+diff)/2;
+		b=sum-a;
+		
+		if(b<0)
+			cout<<"impossible"<<endl;
+		else if(2*a!=sum+diff)
+			cout<<"impossible"<<endl;
+		else
+			cout<<a<<" "<<b<<endl;
+	}
+}
