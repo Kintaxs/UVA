@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line,N,i,j,initial;
+	char t1,t2;
+	bool flag;
+	
+	cin>>line;
+	
+	initial=line;
+	while(line--)
+	{
+		cin>>t1>>t2>>N;
+		
+		int arr[N][N];
+		flag=true;
+		
+		for(i=0;i<N;i++)
+		{
+			for(j=0;j<N;j++)
+			{
+				cin>>arr[i][j];
+				if(arr[i][j]<0)
+					flag=false;
+			}
+		}
+		
+		for(i=0;i<N;i++)
+		{
+			for(j=0;j<N;j++)
+			{
+				if(arr[i][j]!=arr[N-i-1][N-j-1])
+					flag=false;
+			}
+		}
+		
+		if(flag)
+			cout<<"Test #"<<initial-line<<": Symmetric."<<endl;
+		else
+			cout<<"Test #"<<initial-line<<": Non-symmetric."<<endl;
+	}
+
+}
