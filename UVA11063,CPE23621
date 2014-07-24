@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int k,j,N,count=0;
+	bool flag;
+	while(cin>>N)
+	{
+		int temp[20001]={0};
+		count++;
+		int array[N];
+		flag=false;
+		
+		for(int i=0;i<N;i++)
+		{
+			cin>>array[i];
+			if(array[i]<array[i-1]&&i>0)
+				flag=true;
+		}
+		
+		for(j=0;j<N;j++)
+		{
+			for(k=j;k<N;k++)
+			{
+				if(temp[array[j]+array[k]]==1)
+					flag=true;
+				else
+					temp[array[j]+array[k]]=1;
+			}
+		}
+		
+		
+		if(flag)
+			cout<<"Case #"<<count<<": It is not a B2-Sequence."<<endl;
+		else
+			cout<<"Case #"<<count<<": It is a B2-Sequence."<<endl;
+		cout<<endl;
+	}
+
+
+}
