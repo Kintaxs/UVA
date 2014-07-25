@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line,day,num,a;
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		cin>>day>>num;
+		
+		
+		int arr[day+1];
+		
+		for(int i=0;i<day+1;i++)
+		{
+			arr[i]=0;
+		}
+		
+				
+		while(num--)
+		{
+			cin>>a;
+			for(int i=1;;i++)
+			{
+				if(i*a>day)
+					break;
+				else
+				{
+					arr[a*i]=1;
+				}
+			}
+		}
+		
+		int count=0;
+		
+		for(int i=1;i<=day;i++)
+		{
+			if(arr[i]==1&&i%7!=0&&(i+1)%7!=0)
+			{
+				count++;
+			}
+		}
+		
+		cout<<count<<endl;
+	}
+
+}
