@@ -1,0 +1,56 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int line,len,sum,a,b,mi,li;
+	string s1,s2;
+	bool flag;
+	cin>>line;
+	
+	li=line;
+	while(line--)
+	{
+		flag=false;
+		cout<<"Pair #"<<li-line<<":";
+		sum=0;
+		cin>>s1>>s2;
+		len=s1.length();
+		for(int i=s1.length()-1;i>=0;i--)
+		{
+			
+			sum+=(s1[i]-'0')*pow(2,len-i-1);
+			
+		}
+		a=sum;
+		
+		sum=0;
+		len=s2.length();
+		for(int i=s2.length()-1;i>=0;i--)
+		{
+			
+			sum+=(s2[i]-'0')*pow(2,len-i-1);
+			
+		}
+		b=sum;
+		
+		mi=min(a,b);
+		
+		for(int i=2;i<=mi;i++)
+		{
+			if(a%i==0&&b%i==0)
+				flag=true;
+		}
+		
+		if(flag)
+		{
+			cout<<" All you need is love!"<<endl;
+		}
+		else
+		{
+			cout<<" Love is not all you need!"<<endl;
+		}
+	}
+	
+}
