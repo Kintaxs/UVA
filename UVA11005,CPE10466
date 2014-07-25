@@ -1,0 +1,72 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line,n;
+	
+	cin>>line;
+	n=line;
+	while(line--)
+	{
+		cout<<"Case "<<n-line<<":"<<endl;
+		int arr[36];
+		int num,line2;
+		bool flag;
+		for(int i=0;i<36;i++)
+		{
+			cin>>arr[i];
+		}
+		
+		cin>>line2;
+		
+		while(line2--)
+		{
+			cin>>num;
+			
+			cout<<"Cheapest base(s) for number "<<num<<": ";
+			
+			int arr2[40];
+			int temp,sum=0,min;
+			for(int i=2;i<=36;i++)
+			{
+				temp=num;
+				sum=0;
+				while(temp)
+				{
+					sum+=arr[temp%i];
+					temp/=i;
+				}
+				arr2[i]=sum;
+			}
+			
+			min=arr2[2];
+			
+			for(int i=3;i<=36;i++)
+			{
+				if(arr2[i]<min)
+					min=arr2[i];
+			}
+		
+		
+			flag=false;
+			
+			for(int i=2;i<=36;i++)
+			{
+
+				if(arr2[i]==min)
+				{
+					if(flag)
+				    	cout<<" ";
+					cout<<i;
+					flag=true;
+				}
+			}
+			
+			cout<<endl;
+		}
+		if(line!=0)
+			cout<<endl;
+	}
+	
+}
