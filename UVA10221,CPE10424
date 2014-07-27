@@ -1,0 +1,26 @@
+#include<iostream>
+#include<stdio.h>
+#include<cmath>
+using namespace std;
+#define pi 2*acos(0.0)
+int main()
+{
+	double s,a,degree,arc,cho;
+	string str;
+	
+	while(cin>>s>>a>>str)
+	{
+		if(str[0]=='m')
+		{
+			degree=(double)a/60;
+		}
+		else
+			degree=a;
+			
+		arc=2*(s+6440)*pi*(degree/360);
+		cho=(s+6440)*sin(degree*pi/180/2)*2;
+		printf("%.6f %.6f\n",arc,cho);
+	}
+	
+	
+}
