@@ -1,0 +1,48 @@
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+
+int main()
+{
+	float a1,b1,a2,b2,a3,b3,a4,b4;
+	
+	while(cin>>a1>>b1>>a2>>b2>>a3>>b3>>a4>>b4)
+	{
+		if(a1==a2&&b1==b2)
+		{
+			a3+=a4-a2;
+			b3+=b4-b2;
+			printf("%.3f %.3f\n",a3,b3);
+		}
+		else if(a1==a3&&b1==b3)
+		{
+			a2+=a4-a1;
+			b2+=b4-b1;
+			printf("%.3f %.3f\n",a2,b2);
+		}
+		else if(a1==a4&&b1==b4)
+		{
+			a2+=a3-a1;
+			b2+=b3-b1;
+			printf("%.3f %.3f\n",a2,b2);
+		}
+		else if(a2==a3&&b2==b3)
+		{
+			a1+=a4-a2;
+			b1+=b4-b2;
+			printf("%.3f %.3f\n",a1,b1);
+		}
+		else if(a2==a4&&b2==b4)
+		{
+			a1+=a3-a2;
+			b1+=b3-b2;
+			printf("%.3f %.3f\n",a1,b1);
+		}
+		else if(a4==a3&&b4==b3)
+		{
+			a1+=a2-a4;
+			b1+=b2-b4;
+			printf("%.3f %.3f\n",a1,b1);
+		}
+	}
+}
