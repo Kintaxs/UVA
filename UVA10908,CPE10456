@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line,M,N,Q,x,y,goal;
+	char checkpoint;
+	bool flag;
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		cin>>M>>N>>Q;
+		
+		char str[M][N];
+		
+		for(int i=0;i<M;i++)
+		{
+			for(int j=0;j<N;j++)
+			{
+				cin>>str[i][j];
+			
+			}
+
+		}
+
+		cout<<M<<" "<<N<<" "<<Q<<endl;
+		while(Q--)
+		{
+			flag=true;
+			cin>>x>>y;
+			
+			checkpoint=str[x][y];
+			
+		
+			
+			for(int i=1;i<10;i++)
+			{
+				if(x-i<0||y-i<0||x+i>M-1||y+i>N-1)
+				{
+					goal=i;
+					break;
+				}
+				for(int j=x-i;j<=x+i;j++)
+				{
+					for(int k=y-i;k<=y+i;k++)
+					{
+					
+						if(str[j][k]!=checkpoint)
+						{
+					
+							flag=false;
+							goal=i;
+							break;
+						}
+					}
+					
+					if(flag==false)
+						break;
+				}
+				if(flag==false)
+						break;
+			}
+			
+			cout<<1+(goal-1)*2<<endl;
+		}
+	}
+
+
+}
