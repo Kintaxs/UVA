@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int count,line,a,b,x,y,nx,ny,temp;
+	
+	cin>>line;
+	temp=line;
+	while(line--)
+	{
+		cout<<"Case "<<temp-line<<": ";
+		count=0;
+		cin>>a>>b>>x>>y;
+		
+		
+		while(x)
+		{
+			y+=1;
+			x-=1;
+			count++;
+		}
+		
+		while(a)
+		{
+			b+=1;
+			a-=1;
+			count--;
+		}
+		if(b==y)
+			count+=b+1;
+		else
+		{
+			for(int i=b;i<y;i++)
+			{
+				count+=i+1;
+			}
+		}
+		cout<<count<<endl;
+	}
+
+}
