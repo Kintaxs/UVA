@@ -1,0 +1,56 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+
+int comp(const void *a,const void *b)
+{
+	return (*(int*)a)-(*(int*)b);
+}
+int main()
+{
+	int line,a1,a2,a3,count;
+	
+	while(cin>>line)
+	{
+		int arr[line];
+		
+		for(int i=0;i<line;i++)
+		{
+			cin>>arr[i];
+		}
+		
+		qsort(arr,line,sizeof(int),comp);
+		
+		
+		if(line%2==1)
+		{
+			a1=arr[line/2];
+			count=0;
+			for(int i=0;i<line;i++)
+			{
+				if(arr[i]==a1)
+					count++;
+			}
+			a2=count;
+			a3=1;
+		}
+		else
+		{
+			a1=arr[line/2-1];
+			a3=arr[line/2]-arr[line/2-1]+1;
+			
+			count=0;
+			for(int i=0;i<line;i++)
+			{
+				if(arr[i]==arr[line/2-1]||arr[i]==arr[line/2])
+					count++;
+			}
+			
+			a2=count;
+		}
+			
+		cout<<a1<<" "<<a2<<" "<<a3<<endl;
+	}
+
+
+}
