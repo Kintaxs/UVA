@@ -1,0 +1,60 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+#define N 1000000
+
+int arr[N];
+int main()
+{
+
+	int temp,a,b,j;
+	int arr1[6];
+	bool flag;
+	
+	
+	for(int i=2;i<sqrt(N);i++)
+	{
+		if(arr[i])
+			continue;
+		for(int k=i+i;k<N;k+=i)
+			arr[k]=1;
+	}
+		
+	
+	while(cin>>temp)
+	{
+		a=temp;
+		for(int i=0;i<6;i++)
+			arr1[i]=0;
+			
+		j=0;	
+		while(true)
+		{
+
+			arr1[j++]=a%10;
+			a/=10;
+			if(a<10)
+				break;	
+		}
+		arr1[j]=a;
+		
+		
+		b=0;
+		for(int i=0;i<j+1;i++)
+		{
+			b+=arr1[i]*pow(10,j-i);
+		}
+		
+		if(arr[temp])
+			cout<<temp<<" is not prime."<<endl;
+		else if(arr[b])
+			cout<<temp<<" is prime."<<endl;
+		else if(temp==b)
+			cout<<temp<<" is prime."<<endl;
+		else
+			cout<<temp<<" is emirp."<<endl;	
+			
+	
+	}
+}
