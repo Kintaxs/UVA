@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+
+int func(int a[],int b,int len)
+{
+	int count=0;
+	for(int i=b;i<len-1;i++)
+	{
+		swap(a[i],a[i+1]);
+		count++;
+	}
+	return count;
+}
+
+
+int main()
+{
+	int line,num,i,ma,num1,count,malen;
+	int arr[50];
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		i=0;
+		ma=0;
+		count=0;
+		
+		cin>>num;
+		num1=num;
+		
+		for(int j=0;j<50;j++)
+			arr[j]=0;
+		
+		while(num--)
+		{
+			cin>>arr[i];
+			i++;
+		}
+		
+		while(num1)
+		{
+			ma=0;
+			for(int j=0;j<num1;j++)
+			{
+				ma=max(ma,arr[j]);
+			}
+			for(int j=0;j<num1;j++)
+			{
+				if(ma==arr[j])
+					malen=j;
+			}
+			
+			count+=func(arr,malen,num1);
+			num1--;
+		}
+		
+		cout<<"Optimal train swapping takes "<<count<<" swaps."<<endl;
+	
+	}
+
+}
