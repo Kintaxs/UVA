@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	string str="cdefgabCDEFGAB";
+	int arr[14][10]={0,1,1,1,0,0,1,1,1,1,
+					 0,1,1,1,0,0,1,1,1,0,
+					 0,1,1,1,0,0,1,1,0,0,
+					 0,1,1,1,0,0,1,0,0,0,
+					 0,1,1,1,0,0,0,0,0,0,
+					 0,1,1,0,0,0,0,0,0,0,
+					 0,1,0,0,0,0,0,0,0,0,
+					 0,0,1,0,0,0,0,0,0,0,
+					 1,1,1,1,0,0,1,1,1,0,
+					 1,1,1,1,0,0,1,1,0,0,
+					 1,1,1,1,0,0,1,0,0,0,
+					 1,1,1,1,0,0,0,0,0,0,
+					 1,1,1,0,0,0,0,0,0,0,
+					 1,1,0,0,0,0,0,0,0,0};
+	
+	int fi[10]={0};
+	int count[10];
+	string str1;
+	int line;
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		cin>>str1;
+		
+		for(int i=0;i<10;i++)
+		{
+			count[i]=0;
+			fi[i]=0;
+		}
+		for(int i=0;i<str1.size();i++)
+		{
+			for(int j=0;j<10;j++)
+			{
+				if(fi[j]==0&&arr[str.find(str1[i])][j]==1)
+				{
+					count[j]++;
+				}
+				fi[j]=arr[str.find(str1[i])][j];
+			}
+		}
+		
+		for(int i=0;i<10;i++)
+		{
+			cout<<count[i];
+			if(i<9)
+				cout<<" ";
+		}
+		
+		cout<<endl;
+	}
+
+}
