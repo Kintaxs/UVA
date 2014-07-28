@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+					
+	int command,now;
+	int u,d,n,s,e,w,t;
+	string str;
+	
+	while(cin>>command)
+	{
+		if(command==0)
+			break;
+		u=1;d=6;n=2;s=5;e=4;w=3;
+		while(command--)
+		{
+			cin>>str;
+			
+			if(str.compare("north")==0)
+			{
+				t=u;
+				u=s;
+				s=d;
+				d=n;
+				n=t;
+				
+			}
+			else if(str.compare("south")==0)
+			{
+				t=u;
+				u=n;
+				n=d;
+				d=s;
+				s=t;
+			}
+			else if(str.compare("west")==0)
+			{
+				t=u;
+				u=e;
+				e=d;
+				d=w;
+				w=t;
+			}
+			else if(str.compare("east")==0)
+			{
+				t=u;
+				u=w;
+				w=d;
+				d=e;
+				e=t;
+			}
+		}
+		
+		cout<<u<<endl;
+	}
+
+}
