@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+int main()
+{
+	int arr[123];
+	int ma;
+	//string str;
+	bool flag=false;
+	int k=0;
+	char str[1000];
+	
+	while(cin.getline(str,1000))
+	{
+		if(flag)
+			cout<<endl;
+		flag=true;
+		ma=0;
+		for(int i=0;i<123;i++)
+		{
+			arr[i]=0;
+		}
+	
+		for(int i=0;i<strlen(str);i++)
+		{
+		//	if(str[i]==' ')
+			//	continue;
+			arr[(int)str[i]]++;
+		}
+		
+		for(int i=0;i<123;i++)
+		{
+			ma=max(arr[i],ma);
+		}
+		
+		for(int j=1;j<=ma;j++)
+		{
+			for(int i=122;i>=0;i--)
+			{
+				if(arr[i]==j)
+					cout<<i<<" "<<arr[i]<<endl;
+			}
+			
+		}
+		k=0;
+	}
+
+
+}
