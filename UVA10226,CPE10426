@@ -1,0 +1,50 @@
+#include<iostream>
+#include<map>
+#include<string.h>
+#include<stdio.h>
+using namespace std;
+
+int main()
+{
+	int line,sum;
+	string str;
+	char s[32];
+	bool flag=false;
+	
+	cin>>line;
+	cin.getline(s,32);
+	cin.getline(s,32);
+	while(line--)
+	{
+		if(flag)
+		{
+			printf("\n");
+		}
+		flag=true;
+		sum=0;
+		map<string,int> m;
+		map<string,int>::iterator it;
+		while(cin.getline(s,32))
+		{
+			if(s[0]=='\0')
+			{
+				break;
+			}
+			m[s]++;
+		}
+		
+		for(it=m.begin();it!=m.end();it++)
+		{
+			sum+=it->second;
+		}
+		
+		for(it=m.begin();it!=m.end();it++)
+		{
+			cout<<it->first<<" ";
+			printf("%.4f\n",((float)it->second/sum)*100);
+	
+		}
+	
+	}
+	
+}
