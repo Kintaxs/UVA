@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int cola,borrow,count;
+
+	while(cin>>cola)
+	{
+		count=0;
+		borrow=0;
+		
+		while(cola>3)
+		{
+			count+=cola-cola%3;
+			cola=cola/3+cola%3;
+			if(cola==2)
+			{
+				count+=3;
+				borrow=1;
+				break;
+			}
+			else if(cola==3)
+			{
+				borrow=2;
+				count+=4;
+				break;
+			}	
+		}
+		
+		cout<<count<<endl;
+	}
+}
