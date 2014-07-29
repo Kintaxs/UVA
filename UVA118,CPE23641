@@ -1,0 +1,187 @@
+#include<iostream>
+using namespace std;
+
+struct err
+{
+	int xpo;
+	int ypo;
+};
+
+int main()
+{
+	err e[5];
+	int M,N,x,y;
+	char d;
+	string direction;
+	bool flag,flag1;
+	int count;
+	cin>>M>>N;
+	
+	count=0;
+	for(int i=0;i<5;i++)
+	{
+		e[i].xpo=0;
+		e[i].ypo=0;
+	}
+	
+	while(cin>>x>>y>>d)
+	{
+
+		flag=true;
+		cin>>direction;
+		
+		for(int i=0;i<direction.size();i++)
+		{
+			if(direction[i]=='L')
+			{
+			
+				if(d=='N')
+					d='W';
+				else if(d=='S')
+					d='E';
+				else if(d=='E')
+					d='N';
+				else if(d=='W')
+					d='S';
+			}
+			else if(direction[i]=='R')
+			{	
+			
+				if(d=='N')
+					d='E';
+				else if(d=='S')
+					d='W';
+				else if(d=='E')
+					d='S';
+				else if(d=='W')
+					d='N';
+			}
+			else if(direction[i]=='F')
+			{
+				
+				if(d=='N')
+				{
+					y+=1;
+					if(x<0||x>M||y<0||y>N)
+					{
+						flag1=false;
+						for(int j=0;j<count;j++)
+						{
+							if(x==e[j].xpo&&y==e[j].ypo)
+							{
+								flag1=true;
+							}
+						}
+						
+						if(flag1)
+						{
+							y-=1;
+						}
+						else
+						{
+							e[count].xpo=x;
+							e[count].ypo=y;
+							count++;
+							flag=false;
+						}
+					}
+					
+				}
+				else if(d=='S')
+				{
+					y-=1;
+				if(x<0||x>M||y<0||y>N)
+					{
+						flag1=false;
+						for(int j=0;j<count;j++)
+						{
+							if(x==e[j].xpo&&y==e[j].ypo)
+							{
+								flag1=true;
+							}
+						}
+						
+						if(flag1)
+						{
+							y+=1;
+						}
+						else
+						{
+							e[count].xpo=x;
+							e[count].ypo=y;
+							count++;
+							flag=false;
+						}
+					}
+					
+				}
+				else if(d=='E')
+				{
+					x+=1;
+					if(x<0||x>M||y<0||y>N)
+					{
+						flag1=false;
+						for(int j=0;j<count;j++)
+						{
+							if(x==e[j].xpo&&y==e[j].ypo)
+							{
+								flag1=true;
+							}
+						}
+						
+						if(flag1)
+						{
+							x-=1;
+						}
+						else
+						{
+							e[count].xpo=x;
+							e[count].ypo=y;
+							count++;
+							flag=false;
+						}
+					}
+				
+				}
+				else if(d=='W')
+				{
+					x-=1;
+					if(x<0||x>M||y<0||y>N)
+					{
+						flag1=false;
+						for(int j=0;j<count;j++)
+						{
+							if(x==e[j].xpo&&y==e[j].ypo)
+							{
+								flag1=true;
+							}
+						}
+						
+						if(flag1)
+						{
+							x+=1;
+						}
+						else
+						{
+							e[count].xpo=x;
+							e[count].ypo=y;
+							count++;
+							flag=false;
+						}
+					}
+					
+				}
+				
+				
+			}
+		}
+		
+		cout<<x<<" "<<y<<" "<<d;
+		if(flag)
+			cout<<endl;
+		else
+			cout<<" LOST"<<endl;
+		}
+
+
+}
