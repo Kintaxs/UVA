@@ -1,0 +1,25 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+#define pi 2.0*acos(0.0)
+
+int main()
+{
+	double a,x,y,z;
+	
+	while(cin>>a)
+	{
+		x=(1+pi/3-sqrt(3))*pow(a,2);
+		y=(pi/12+(sqrt(3))/2-1)*pow(a,2);
+		z=(-pi/6+1-(sqrt(3))/4)*pow(a,2);
+		
+		cout.precision(3);
+		cout.setf(cout.fixed);
+		cout<<x<<" "<<4*y<<" "<<4*z<<endl;
+	
+	
+	}
+
+
+}
