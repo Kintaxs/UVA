@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	double sum,temp,x,test,l,m;
+	float dif=0.001;
+	int i;
+	
+	while(cin>>x>>l)
+	{
+		temp=min(x,l);
+		sum=0;
+		for(int i=1;2*i*dif<temp;i++)
+		{
+			sum=max((x-2*i*dif)*(l-2*i*dif)*i*dif,sum);
+			if(sum!=test)
+				m=i*dif;
+			test=sum;
+		}
+		
+		cout.precision(3);
+		cout.setf(cout.fixed);
+		
+		cout<<m<<" 0.000 "<<temp/2<<endl;
+	}
+
+
+}
+
