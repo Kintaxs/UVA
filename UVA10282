@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+#define N 100
+
+
+int main()
+{
+	string dic[N],ans[N],test;
+	string arr;
+	string temp[N];
+	int i;
+	bool flag;
+	
+	i=0;
+
+	while(getline(cin,dic[i]))
+	{
+		if(dic[i].compare("")==0)
+		{
+			break;
+		}
+		i++;
+	}
+	
+	for(int j=0;j<i;j++)
+	{
+		flag=true;
+		for(int k=0;k<dic[j].size();k++)
+		{
+			if(dic[j][k]==' ')
+			{
+				flag=false;
+				continue;
+			}
+			if(flag)
+				temp[j].insert(temp[j].size(),1,dic[j][k]);
+			else
+				ans[j].insert(ans[j].size(),1,dic[j][k]);
+		}
+	}
+
+	while(cin>>test)
+	{
+		flag=false;
+		for(int j=0;j<i;j++)
+		{
+			if(test.compare(ans[j])==0)
+			{
+				flag=true;
+				cout<<temp[j]<<endl;
+			}
+		}
+		
+		if(!flag)
+			cout<<"eh"<<endl;
+	}
+}
