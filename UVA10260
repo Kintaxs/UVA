@@ -1,0 +1,45 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	string sound[7]={"BFPV","CGJKQSXZ","DT","L","MN","R","AEIOUHWY"};
+	string str,answer;
+	int now;
+	char c='w';
+
+	
+	while(cin>>str)
+	{
+		answer.clear();
+		now=0;
+		for(int i=0;i<str.size();i++)
+		{
+			for(int j=0;j<7;j++)
+			{
+				for(int k=0;k<sound[j].size();k++)
+				{
+					if(str[i]==sound[j][k]&&j==6)
+					{
+						now=0;
+						continue;
+					}
+					if(str[i]==sound[j][k]&&(j+1)!=now)
+					{
+						now=j+1;
+						answer.insert(answer.size(),1,(char)(now+'0'));
+					}
+				}
+			}
+		
+		}
+		
+		cout<<answer<<endl;
+	
+	
+	
+	}
+
+
+}
