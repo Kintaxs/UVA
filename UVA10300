@@ -1,0 +1,27 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int line,farmer,size,degree,sum,animal;
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		sum=0;
+		
+		cin>>farmer;
+		
+		while(farmer--)
+		{
+			cin>>size>>animal>>degree;
+			sum+=size*degree;
+		}
+		
+		cout<<sum<<endl;
+	}
+
+
+}
