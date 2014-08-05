@@ -1,0 +1,43 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	string str;
+	int line,count,a,b;
+	bool flag;
+	
+	count=0;
+	while(cin>>str)
+	{
+		cout<<"Case "<<++count<<":"<<endl;
+	
+		cin>>line;
+		
+		while(line--)
+		{
+			flag=true;
+			cin>>a>>b;
+			
+			for(int i=min(a,b);i<max(a,b);i++)
+			{
+				if(str[i]!=str[i+1])
+				{
+					flag=false;
+					break;
+				}
+			}
+			
+			if(flag)
+				cout<<"Yes"<<endl;
+			else
+				cout<<"No"<<endl;
+		}
+	
+	}
+
+
+
+
+}
