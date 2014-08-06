@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	string a,b;
+	string arr="abcdefghijklmnopqrstuvwxyz";
+	string arr2="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int sum,sum2;
+	float ans;
+	
+	
+	
+	while(cin>>a>>b)
+	{
+		sum=0;
+		sum2=0;
+		
+		for(int i=0;i<a.size();i++)
+		{
+		
+			
+			if(a[i]>=65&&a[i]<=90)
+				sum+=arr2.find(a[i])+1;		
+			else
+				sum+=arr.find(a[i])+1;
+		}
+		
+		for(int i=0;i<b.size();i++)
+		{
+		
+			if(b[i]>=65&&b[i]<=90)
+			{
+				sum2+=arr2.find(b[i])+1;
+			}
+			else
+				sum2+=arr.find(b[i])+1;
+		}
+		
+		while(sum>10)
+		{
+			sum=sum/10+sum%10;
+		}
+		
+		while(sum2>10)
+		{
+			sum2=sum2/10+sum2%10;
+		}
+		
+		
+		if(sum2>sum)
+			ans=((float)sum/sum2)*100;
+		else
+			ans=((float)sum2/sum)*100;
+		
+		
+		cout.precision(2);
+		cout.setf(cout.fixed);
+		
+		cout<<ans<<" %"<<endl;
+		
+	
+	}
+}
