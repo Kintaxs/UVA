@@ -1,0 +1,33 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int n,s,t;
+	bool flag=false;
+	
+	while(cin>>n)
+	{
+		if(!flag)
+		{
+			flag=true;
+		}
+		else
+			cout<<endl;
+		t=0;
+		cin>>s;
+		t=n;
+		while(n>=s)
+		{
+			t+=n/s;
+			n=n/s+n%s;
+		}
+		
+		cout<<t;
+		
+	}
+
+
+
+}
