@@ -1,0 +1,59 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+	long long int ans;
+	int arr[32];
+	int arr1[32];
+	int a,b;
+	
+	
+	while(cin>>a>>b)
+	{
+		ans=0;
+		for(int i=0;i<=31;i++)
+		{
+			arr[i]=0;
+			arr1[i]=0;
+		}
+	
+		for(int i=0;i<=31;i++)
+		{
+			if(a>=pow(2,31-i))
+			{
+				arr[i]=1;
+				a-=pow(2,31-i);
+			}
+		}
+		
+		for(int i=0;i<=31;i++)
+		{
+			if(b>=pow(2,31-i))
+			{
+				arr1[i]=1;
+				b-=pow(2,31-i);
+			}
+		}
+		
+		for(int i=0;i<=31;i++)
+		{
+			if(arr[i]==1&&arr1[i]==1)
+				arr[i]=0;
+			else
+				arr[i]+=arr1[i];
+		}
+		
+		for(int i=0;i<=31;i++)
+		{
+			if(arr[i]==1)
+				ans+=pow(2,31-i);
+		}
+		
+		cout<<ans<<endl;
+	}
+	
+	
+}
