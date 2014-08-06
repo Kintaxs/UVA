@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int count,line,num,sum;
+	float ans;
+	cin>>line;
+	
+	while(line--)
+	{
+		sum=0;
+		count=0;
+		cin>>num;
+		
+		int arr[num];
+		
+		for(int i=0;i<num;i++)
+		{
+			cin>>arr[i];
+			sum+=arr[i];
+		}
+		
+		sum/=num;
+		
+		for(int i=0;i<num;i++)
+		{
+			if(arr[i]>sum)
+				count++;
+		}
+		
+		
+		ans=count/(float)num*100;
+		
+		
+		cout.precision(3);
+		cout.setf(cout.fixed);
+		
+		cout<<ans<<"%"<<endl;
+	}
+
+
+}
