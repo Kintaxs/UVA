@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line,pole,num,ma,mi,mid;
+	
+	cin>>line;
+	
+	
+	while(line--)
+	{
+		mi=0;
+		ma=0;
+		cin>>pole>>num;
+		int arr[num];
+		
+		for(int i=0;i<num;i++)
+			cin>>arr[i];
+			
+		mid=pole/2;
+		
+		for(int i=0;i<num;i++)
+		{
+			if(arr[i]>mid)
+			{
+				ma=max(arr[i],ma);
+			}
+			else
+				ma=max(pole-arr[i],ma);
+		}
+		
+		for(int i=0;i<num;i++)
+		{
+			if(arr[i]>mid)
+			{
+				mi=max(pole-arr[i],mi);
+			}
+			else
+				mi=max(arr[i],mi);
+		}
+		
+		cout<<mi<<" "<<ma<<endl;
+	}
+
+
+}
