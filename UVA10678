@@ -1,0 +1,32 @@
+#include<iostream>
+#include<cmath>
+
+#define pi 2*acos(0.0)
+
+using namespace std;
+
+int main()
+{
+	double a,b,c,n,l;
+	int line;
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		cin>>n>>l;
+		
+		a=l/2;
+		c=n/2;
+		b=sqrt(a*a-c*c);
+		
+		cout.precision(3);
+		cout.setf(cout.fixed);
+		
+		cout<<pi*a*b<<endl;
+		
+		
+	}
+
+
+}
