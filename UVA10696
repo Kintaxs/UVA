@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int line;
+	
+	while(cin>>line)
+	{
+		if(!line)
+			break;
+		if(line>=101)
+			cout<<"f91("<<line<<") = "<<line-10<<endl;
+		else
+			cout<<"f91("<<line<<") = "<<"91"<<endl;
+	
+	}
+
+}
