@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+#define N 1000000
+int arr[N]={0};
+
+int main()
+{
+	int line,num;
+	
+	for(int i=2;i<1000;i++)
+	{
+		if(arr[i])
+			continue;
+		for(int j=i+i;j<1000000;j+=i)
+		{
+			arr[j]=1;
+		}
+	}
+	
+	
+	while(cin>>line)
+	{
+		if(!line)
+			break;
+		num=0;
+		for(long long int i=2;i<1000000;i++)
+		{
+			
+			if(i>line)
+				break;
+			if(!arr[i])
+			{
+				
+				if(line%i==0)
+					num++;
+			}
+		}
+		
+		cout<<line<<" : "<<num<<endl;
+	}
+}
