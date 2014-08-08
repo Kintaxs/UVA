@@ -1,0 +1,29 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int line,a,b,c,sum;
+	
+	cin>>line;
+	
+	while(line--)
+	{
+		sum=0;
+		
+		cin>>a>>b>>c;
+		
+		a+=b;
+		
+		while(a/c)
+		{
+			sum+=a/c;
+			a=a/c+a%c;
+		}
+		
+		cout<<sum<<endl;
+	
+	}
+
+}
