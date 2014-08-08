@@ -1,0 +1,48 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int term,ans,sum;
+	
+	while(cin>>term)
+	{
+		cout<<"TERM "<<term<<" IS ";
+		sum=0;
+		for(int i=1;i<10000;i++)
+		{
+			sum+=i;
+			if(sum>term)
+			{
+				ans=i-1;
+				sum-=i;
+				break;
+			}
+		}
+		sum=term-sum;
+		
+		if(sum==0&&ans%2==0)
+		{
+			cout<<ans<<"/1"<<endl;
+			
+		}
+		else if(sum==0&&ans%2==1)
+		{
+			cout<<"1/"<<ans<<endl;
+		}
+		else if((ans+1)%2==0)
+		{
+			cout<<sum<<"/"<<ans+1-sum+1<<endl;
+		}
+		else if((ans+1)%2==1)
+		{
+			cout<<ans+1-sum+1<<"/"<<sum<<endl;
+		}
+	
+	
+	
+	}
+
+
+}
