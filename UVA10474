@@ -1,0 +1,52 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+	int a,b,temp,count,line=0;
+	bool flag;
+	while(cin>>a>>b)
+	{
+		if(a==0&&b==0)
+			break;
+		cout<<"CASE# "<<++line<<":"<<endl;
+
+		vector<int>	m;
+		vector<int>::iterator it;
+		
+		for(int i=0;i<a;i++)
+		{
+			cin>>temp;
+			m.push_back(temp);
+		}
+		
+		
+		sort(m.begin(),m.end());
+		
+		for(int i=0;i<b;i++)
+		{
+
+			cin>>temp;
+			flag=false;
+			for(it=m.begin(),count=1;it!=m.end();it++,count++)
+			{
+				if(temp==*it)
+				{
+					flag=true;
+					break;
+				}
+			}
+			
+			if(flag)
+				cout<<temp<<" found at "<<count<<endl;
+			else
+				cout<<temp<<" not found"<<endl;
+		}
+		
+	}
+	
+
+
+}
